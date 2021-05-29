@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class BinarySearchDemo {
+    public int[] Sorting(int[] arr){
+        for(int j=0; j<arr.length-1; j++){
+            for(int i=0; i<arr.length-j-1; i++){
+                if(arr[i]>arr[i+1]){
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public static void printArrayElements(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static String find(int item, int[] arr){
+        int b = 0;
+        int e = arr.length-1;
+        int mid;
+
+        String value = "";
+        while(b<=e){
+            mid = (b+e)/2;
+            if(item==arr[mid]){
+                value = "Matched";
+                break;
+            }else{
+                value = "unmatched";
+            }
+            if(item>arr[mid]){
+                b = mid+1;
+            }else if(item<arr[mid]){
+                e = mid-1;
+            }
+        }
+        return value;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BinarySearchDemo binarySearchDemo = new BinarySearchDemo();
+        int[] array = {20,10,40,30,50};
+        printArrayElements(binarySearchDemo.Sorting(array));
+        System.out.println("Enter key: ");
+        int k = sc.nextInt();
+        System.out.println(find(k,binarySearchDemo.Sorting(array)));
+
+    }
+}
