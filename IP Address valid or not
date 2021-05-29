@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class MyRegex{
+    public boolean regex(String in){
+        boolean flag = false;
+        String[] sArr = in.split("\\.");
+        if(sArr.length==4){
+            for(int i=0; i<sArr.length; i++){
+
+                try{
+                    if(Integer.parseInt(sArr[i])<=255 && Integer.parseInt(sArr[i])>=0){
+                        System.out.println(Integer.parseInt(sArr[i]));
+                        flag = true;
+                    }else{
+                        flag = false;
+                        break;
+                    }
+                }catch(Exception e){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+}
+
+public class RegexCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input;
+        while(sc.hasNext()){
+            input = sc.nextLine();
+            MyRegex myRegex = new MyRegex();
+            System.out.println(myRegex.regex(input));
+        }
+    }
+}
