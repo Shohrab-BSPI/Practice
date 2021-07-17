@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="postgresql-42.2.22">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/postgresql-42.2.22.jar!/" />
+      <root url="jar://F:/Programming Sof/jdatechooser_bin_doc_1_1_1/lib/DateChooser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
